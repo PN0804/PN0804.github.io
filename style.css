@@ -1,0 +1,247 @@
+* {
+    color: #D4D4D4;
+    font-family: "open sans", arial;
+    
+}
+
+body {
+    background-color: #0F1117;
+}
+
+/*//////////////Landing Page////////////////////*/
+.signature {
+    position: fixed;
+    bottom: 10vh;
+    margin-left: 5vw;
+    width: 55vw;
+    height: 75vh;
+    background-image: url("media/landing page/Signature.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    background-color: transparent;
+    animation: flyInGrow 2s forwards ease-out;
+}
+
+@keyframes flyInGrow {
+    0% {
+        transform: translateX(100%) scale(0.1);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(-10%) scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+#about, #contacts, #projects, #resume {
+    position: absolute;
+    background-color: transparent;
+    display: block;
+    width: 27vw;
+    height: 27vh;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s, background-image 0.2s;
+    filter: drop-shadow(0 0 5px #4ADE80)
+            drop-shadow(0 0 10px #4ADE80)
+            drop-shadow(0 0 20px #4ADE80);
+}
+
+#about:hover, #contacts:hover, #projects:hover, #resume:hover{
+    filter: drop-shadow(0 0 5px #D4D4D4)
+            drop-shadow(0 0 10px #D4D4D4)
+            drop-shadow(0 0 20px #D4D4D4);
+}
+
+#about {
+    left: 550px;
+    top: 50px;
+    background-image: url("media/landing page/About Me.png");
+}
+
+#about:hover {
+    background-image: url("media/landing page/Hovered Ab.png");
+    filter: drop-shadow(0 0 5px #D4D4D4)
+            drop-shadow(0 0 10px #D4D4D4)
+            drop-shadow(0 0 20px #D4D4D4);
+}
+
+#contacts {
+    left: 1400px;
+    top: 550px;
+    background-image: url("media/landing page/Contacts.png");
+}
+
+#contacts:hover {
+    background-image: url("media/landing page/Hovered Con.png");
+}
+
+#projects {
+    left: 925px;
+    top: 275px;
+    background-image: url("media/landing page/Projects.png");
+}
+
+#projects:hover {
+    background-image: url("media/landing page/Hovered Proj.png");
+}
+
+#resume {
+    left: 1300px;
+    top: 70px;
+    background-image: url("media/landing page/Resume.png");
+    
+}
+
+#resume:hover {
+    background-image: url("media/landing page/Hovered Res.png");
+}
+
+#AbLabel, #ProjLabel, #ResLabel, #ConLabel {
+    position: absolute;
+    color : #4ADE80;
+    font-family: 'roboto';
+    font-size: 50px;
+    background-color: transparent;
+    text-align: center;
+}
+
+#AbLabel {
+    left: 700px;
+    top: 275px;
+    
+}
+
+#ProjLabel {
+    left: 1095px;
+    top: 500px;
+}
+
+#ResLabel {
+    left: 1470px;
+    top: 295px;
+}
+
+#ConLabel {
+    left: 1560px;
+    top: 775px;
+}
+
+.bob {
+    display: inline-block;
+    animation: bob 3s ease-in-out infinite;
+}
+
+@keyframes bob {
+    0%   { transform: translateY(0px); }
+    50%  {transform: translateY(-20px); }
+    100% {transform: translateY(0px); }
+}
+
+#page-content {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.bigB {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    overflow: hidden;
+    background: linear-gradient(120deg, #0F1117, #6B7280, #D4D4D4);
+    background-size: 200% 200%;
+    animation: bgMove 10s ease-in-out infinite;
+}
+
+@keyframes bgMove {
+    0%   { background-position: 0% 50%; }
+    25%  { background-position: 25% 75%; }
+    50%  { background-position: 0% 50%; }
+    75%  { background-position: 75% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/*//////////////Landing Page End////////////////////*/
+
+/*/////////////circular nav//////////////////////*/
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.circle-nav {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 250px;
+    background-color: #4ADE80;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+    transition:
+        width 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.circle-nav:hover {
+    width: 200px;
+    background-color: #6B7280;
+}
+
+.circle-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.circle-nav ul li a {
+    display: block;
+    padding: 15px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    opacity: 0;
+    white-space: nowrap;
+    transform: translateX(-50px);
+    text-align: left;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        font-size 0.2s ease,
+        letter-spacing 0.2s ease;
+}
+
+.circle-nav:hover ul li a{
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.circle-nav ul li {
+    margin: 9px 0;
+    transition: transform 0.2s ease;
+}
+
+.circle-nav ul li:hover {
+    transform: scale(1.125);
+}
