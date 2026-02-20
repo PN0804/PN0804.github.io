@@ -5,9 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Phi Nguyen :: Survey</title>
 </head>
 <body>
+
+    <header>
+        <h1> Survey </h1>
+        <h2> Help me improve with your feedback </h2>
+        <h3> Items marked with an asterisk* are required.</h3>
+        <hr>
+    </header>
+
+    <main class = "survey-container">
+        <form id = "survey-form" action = "https://formspree.io/f/xzdavkba" method = "POST">
+            <div class = "form-group">
+                <label for = "name">Name:</label>
+                <input type = "text" id = "name" name = "name" placeholder = "Your Name">
+            </div>
+
+            <div class = "form-group">
+                <label for = "email">E-mail:</label>
+                <input type = "email" id = "email" name = "email" placeholder = "Your E-mail">
+            </div>
+
+            <div class = "form-group">
+                <label for = "rating">How satisfied were you? *</label>
+                <select id = "rating" name = "rating" required>
+                    <option value = "">Select An Option</option>
+                    <option value = "1">Very Unsastisfied</option>
+                    <option value = "2">Unsastisfied</option>
+                    <option value = "3">Neutral</option>
+                    <option value = "4">Sastisfied</option>
+                    <option value = "5">Very Sastisfied</option>
+                </select>
+            </div>
+
+            <div class = "from-group">
+                <label for = "audience">What is the reason for the visit? *</label>
+                <textarea id = "audience" name = "audience" placeholder = "Your Thoughts..." rows = "5" required></textarea>
+            </div>
+
+            <div class = "from-group">
+                <label for = "positives">What was done well? *</label>
+                <textarea id = "positives" name = "positives" placeholder = "Your Thoughts..." rows = "5" required></textarea>
+            </div>
+
+            <div class = "from-group">
+                <label for = "negatives">What could be improved? *</label>
+                <textarea id = "negatives" name = "negatives" placeholder = "Your Thoughts..." rows = "5" required></textarea>
+            </div>
+
+            <div class = "from-group">
+                <label for = "comments">Additional comments</label>
+                <textarea id = "comments" name = "comments" placeholder = "Your Additional Thoughts..." rows = "5"></textarea>
+            </div>
+
+            <button type = "submit">Submit</button>
+        </form>
+    </main>
     
 </body>
 </html>
